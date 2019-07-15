@@ -109,3 +109,4 @@ dev_test/
 
 tenstocks/report/logs/
 log.txt
+.idea/

@@ -13,7 +13,7 @@ def my_MACD(df, fastperiod=12, slowperiod=26, signalperiod=9):
     :param signalperiod: 信号周期参数 默认：9
     :return: DataFrame
     """
-    DIF, DEA, MACD_1 = talib.MACD(df['close'],
+    DIF, DEA, MACD_1 = talib.MACD(df['close'].values,
                                   fastperiod=fastperiod,
                                   slowperiod=slowperiod,
                                   signalperiod=signalperiod)
@@ -30,7 +30,7 @@ def my_BOLL(df, timeperiod=20, nbdevup=2, nbdevdn=2):
     :return:  Dataframe
     """
     # df = pd.DataFrame()
-    df['boll_up'], df['boll_mid'], df['boll_low'] = talib.BBANDS(df['close'],
+    df['boll_up'], df['boll_mid'], df['boll_low'] = talib.BBANDS(df['close'].values,
                                                                  timeperiod=timeperiod,
                                                                  nbdevup=nbdevup,
                                                                  nbdevdn=nbdevdn)
@@ -47,7 +47,7 @@ def my_RSI(df, timeperiod: tuple = (6, 12, 24)):
     :return:  Dataframe
     """
     for i in timeperiod:
-        df[f'RSI_{i}'] = talib.RSI(df['close'], timeperiod=i)
+        df[f'RSI_{i}'] = talib.RSI(df['close'].values, timeperiod=i)
     return df
 
 
@@ -81,7 +81,7 @@ def my_MA(df, item='price', timeperiod: tuple = (20,)):
     item = 'close' if item == 'price' else 'vol'
     t_list = list(timeperiod)
     for i in t_list:
-        df[f'{item}_MA_{i}'] = talib.MA(df[item], timeperiod=i)
+        df[f'{item}_MA_{i}'] = talib.MA(df[item].values, timeperiod=i)
     return df
 
 

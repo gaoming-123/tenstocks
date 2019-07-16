@@ -13,7 +13,7 @@ from scheduler import My_scheduler
 
 logging.basicConfig(filename='logs/log.txt',filemode="a+",
                     format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
-                    datefmt="%Y-%M-%d %H:%M:%S", level=logging.error)
+                    datefmt="%Y-%m-%d %H:%M:%S", level=logging.ERROR)
 
 def main():
     html=''
@@ -40,6 +40,7 @@ def main():
             time.sleep(50)
     today=str(datetime.date.today())
     html=get_complete_html(today,html)
+    print(html)
     theme=f'{today}**诊判报告'
     send_res_to_email(contents=html,theme=theme,content_type='html')
 
@@ -47,6 +48,7 @@ def main():
 
 
 if __name__ == '__main__':
+    # main()
     scheduler=My_scheduler()
-    scheduler.add_job(main,'cron', day_of_week='0-4', hour=20, minute=0, secend=0)
+    scheduler.add_job(main,'cron', day_of_week='0-4', hour=20, minute=0, second=0)
     scheduler.start()

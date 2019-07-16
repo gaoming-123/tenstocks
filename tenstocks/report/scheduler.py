@@ -39,7 +39,7 @@ class My_scheduler():
                                            job_defaults=self.job_defaults)
 
     def add_job(self, job, *args, **kwargs):
-        # self.scheduler.add_job(my_job, 'cron', day_of_week='mon-fri', hour=20, minute=0, secend=0)
+        # self.scheduler.add_job(my_job, 'cron', day_of_week='mon-fri', hour=20, minute=0, second=0)
         self.scheduler.add_job(job, *args, **kwargs)
 
     def start(self):

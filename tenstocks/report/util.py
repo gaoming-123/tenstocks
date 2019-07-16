@@ -157,13 +157,15 @@ def get_peak_index(macd_section):
     """
     # macd_section=macd_sec['MACD']
     peak_index = []
+
+    # 判断符号
+    # macd_section['MACD'].sum()
     for s_i in range(1, macd_section['MACD'].shape[0] - 1):
         # 判断极值 如果 该值与两侧值的差值乘积符号为正，则为极值
         if (macd_section['MACD'].iloc[s_i] - macd_section['MACD'].iloc[s_i - 1]) * (
                 macd_section['MACD'].iloc[s_i] - macd_section['MACD'].iloc[s_i + 1]) > 0:
             # 上升找极大值  下跌找极小值
-            if (macd_section['MACD'].iloc[s_i] - macd_section['MACD'].iloc[s_i - 1]) * macd_section['MACD'].iloc[
-                0] > 0:  # 剔除凹值
+            if (macd_section['MACD'].iloc[s_i] - macd_section['MACD'].iloc[s_i - 1]) * macd_section['MACD'].sum() > 0:  # 剔除凹值
                 peak_index.append(s_i)
 
     # 第一区间的值还在持续变化，那么极值就是第一值

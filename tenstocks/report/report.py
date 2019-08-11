@@ -42,13 +42,13 @@ def main():
     html=get_complete_html(today,html)
     print(html)
     theme=f'{today}**诊判报告'
-    send_res_to_email(contents=html,theme=theme,content_type='html')
+    # send_res_to_email(contents=html,theme=theme,content_type='html')
 
 
 
 
 if __name__ == '__main__':
-    # main()
-    scheduler=My_scheduler()
-    scheduler.add_job(main,'cron', day_of_week='0-4', hour=20, minute=0, second=0)
-    scheduler.start()
+    main()
+    # scheduler=My_scheduler()
+    # scheduler.add_job(main,'cron', day_of_week='0-4', hour=20, minute=0, second=0)
+    # scheduler.start()

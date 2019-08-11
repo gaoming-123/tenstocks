@@ -25,7 +25,7 @@ SECRET_KEY = '$zymixw(*z^$h=yfmoo$qdb-g+pee^bai*w$s4(f%tigcbm9&$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',#添加这一行
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.weixin',
+    'user',
+    'stocks',
 ]
+
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +69,7 @@ ROOT_URLCONF = 'tenstocks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +92,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'tenstocks',
+    #     'HOST': '127.0.0.1',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'PORT': '3306',
+    # }
 }
 
 
@@ -103,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -118,3 +141,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+
+# django-allauth配置----------------
+SITE_ID = 1
+
+# 基本设定
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+# 登录成功后跳转的页面
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+
+# 邮箱设定
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'gaomingjiang123@sina.com' # 你的 邮箱 账号和授权码
+EMAIL_HOST_PASSWORD = 'gaomingjiang'
+EMAIL_USE_TLS = True # 这里必须是 True，否则发送不成功
+EMAIL_FROM = 'gaomingjiang123@sina.com' # 你的 邮箱 账号
+DEFAULT_FROM_EMAIL = 'gaomingjiang123@sina.com'
+# ----------------

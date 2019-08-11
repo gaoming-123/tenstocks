@@ -110,3 +110,5 @@ dev_test/
 tenstocks/report/logs/
 log.txt
 .idea/
+tenstocks/user/migrations/
+tenstocks/stocks/migrations/

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed56ccc6-3486-4793-8f76-e0efe22e5f77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tenstocks/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tenstocks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tenstocks.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tenstocks/report/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenstocks/report/pre_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/pre_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tenstocks/report/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenstocks/report/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenstocks/report/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/report/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/report/trade.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/trade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/report/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/report/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/stocks/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/stocks/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/stocks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/stocks/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/tenstocks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/tenstocks/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenstocks/tenstocks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenstocks/tenstocks/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,67 +24,122 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/tenstocks$test_tushare.coverage" NAME="test_tushare Coverage Results" MODIFIED="1562938211906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$test_log.coverage" NAME="test_log Coverage Results" MODIFIED="1563114461339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
     <SUITE FILE_PATH="coverage/tenstocks$test_price.coverage" NAME="test_price Coverage Results" MODIFIED="1562945996019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$test_func.coverage" NAME="test_func Coverage Results" MODIFIED="1562925108288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$table_create.coverage" NAME="table_create Coverage Results" MODIFIED="1562222045781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
     <SUITE FILE_PATH="coverage/tenstocks$schudle_test.coverage" NAME="schudle_test Coverage Results" MODIFIED="1563191400152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$tonghuashun.coverage" NAME="tonghuashun Coverage Results" MODIFIED="1562210965757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$test_email.coverage" NAME="test_email Coverage Results" MODIFIED="1563086754576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$utils.coverage" NAME="utils Coverage Results" MODIFIED="1564797589856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenstocks/stocks" />
+    <SUITE FILE_PATH="coverage/tenstocks$manage.coverage" NAME="manage Coverage Results" MODIFIED="1564822390529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenstocks" />
     <SUITE FILE_PATH="coverage/tenstocks$test_macd.coverage" NAME="test_macd Coverage Results" MODIFIED="1562849397881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
     <SUITE FILE_PATH="coverage/tenstocks$test_trade.coverage" NAME="test_trade Coverage Results" MODIFIED="1563108593697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
-    <SUITE FILE_PATH="coverage/tenstocks$report.coverage" NAME="report Coverage Results" MODIFIED="1563281058652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenstocks/report" />
+    <SUITE FILE_PATH="coverage/tenstocks$test_log.coverage" NAME="test_log Coverage Results" MODIFIED="1564820005889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$test_func.coverage" NAME="test_func Coverage Results" MODIFIED="1562925108288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$table_create.coverage" NAME="table_create Coverage Results" MODIFIED="1562222045781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$tonghuashun.coverage" NAME="tonghuashun Coverage Results" MODIFIED="1562210965757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$test_email.coverage" NAME="test_email Coverage Results" MODIFIED="1563086754576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dev_test" />
+    <SUITE FILE_PATH="coverage/tenstocks$report.coverage" NAME="report Coverage Results" MODIFIED="1563721399383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenstocks/report" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="425713555">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.65" value="1" />
+          <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="csv" value="8" />
-          <entry key="gitignore" value="7" />
-          <entry key="html" value="3" />
+          <entry key="auth_user" value="1" />
+          <entry key="css" value="3" />
+          <entry key="csv" value="16" />
+          <entry key="gitignore" value="8" />
+          <entry key="html" value="26" />
           <entry key="log" value="2" />
-          <entry key="py" value="99" />
-          <entry key="txt" value="7" />
+          <entry key="py" value="241" />
+          <entry key="sql" value="1" />
+          <entry key="stocks_a_stocks" value="2" />
+          <entry key="stocks_money_out" value="1" />
+          <entry key="stocks_weekcompany" value="1" />
+          <entry key="txt" value="9" />
+          <entry key="users" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="3" />
-          <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="99" />
+          <entry key="CSS" value="3" />
+          <entry key="Database Element" value="9" />
+          <entry key="HTML" value="26" />
+          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="Python" value="241" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="181" />
-          <entry key="gitignore" value="61" />
-          <entry key="html" value="367" />
-          <entry key="py" value="19184" />
+          <entry key="css" value="1" />
+          <entry key="csv" value="4" />
+          <entry key="gitignore" value="95" />
+          <entry key="html" value="1294" />
+          <entry key="py" value="22828" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="367" />
-          <entry key="PLAIN_TEXT" value="61" />
-          <entry key="Python" value="19365" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="1294" />
+          <entry key="PLAIN_TEXT" value="99" />
+          <entry key="Python" value="23009" />
         </counts>
       </usages-collector>
     </session>
@@ -85,100 +147,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/single_strategy.py">
+        <entry file="file://$PROJECT_DIR$/tenstocks/report/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="235" selection-start-line="235" selection-end-line="235" />
+            <state relative-caret-position="95">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <element signature="e#101#1179#0" />
-                <element signature="e#1222#2499#0" />
-                <element signature="e#2528#3061#0" />
-                <element signature="e#3090#3142#0" />
-                <element signature="e#3183#4723#0" />
-                <element signature="e#4752#5966#0" />
+                <element signature="e#72#87#0" expanded="true" />
+                <element signature="e#420#1636#0" />
+                <element signature="e#1693#2359#0" />
+                <element signature="e#2430#5497#0" />
+                <element signature="e#5536#5809#0" />
+                <element signature="e#5850#6642#0" />
+                <element signature="e#6690#7018#0" />
+                <element signature="e#7094#9229#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tenstocks/stocks/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
+              <folding>
+                <element signature="e#129#1712#0" />
+                <element signature="e#1749#3100#0" />
+                <element signature="e#3136#3464#0" />
+                <element signature="e#3499#9354#0" />
+                <element signature="e#9391#13613#0" />
+                <element signature="e#13650#15671#0" />
+                <marker date="1564899578285" expanded="true" signature="13665:13670" ph="..." />
+                <marker date="1564899578285" expanded="true" signature="15721:15726" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/report.py">
+        <entry file="file://$PROJECT_DIR$/tenstocks/report/strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="985">
-              <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+            <state relative-caret-position="541">
+              <caret line="342" column="53" lean-forward="true" selection-start-line="342" selection-start-column="53" selection-end-line="342" selection-end-column="53" />
               <folding>
-                <element signature="e#72#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/pre_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="e#154#626#0" />
-                <element signature="e#687#1289#0" />
-                <element signature="e#1345#1573#0" />
-                <element signature="e#1644#2389#0" />
-                <element signature="e#2452#2740#0" />
-                <element signature="e#2765#2912#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/scheduler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#176#237#0" expanded="true" />
-                <element signature="e#587#1599#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding>
-                <element signature="e#429#507#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" />
-                <element signature="e#259#293#0" />
-                <element signature="e#417#1633#0" />
-                <element signature="e#815#849#0" />
-                <element signature="e#1292#1566#0" />
-                <element signature="e#2427#2591#1" />
-                <element signature="e#2783#2932#0" />
-                <element signature="e#3008#3157#0" />
-                <element signature="e#3204#3687#0" />
-                <element signature="e#3334#3502#0" />
-                <element signature="e#3604#3687#0" />
-                <element signature="e#3855#4030#0" />
-                <element signature="e#4183#4354#0" />
-                <element signature="e#5068#5239#0" />
-                <element signature="e#5533#5806#0" />
-                <element signature="e#5597#5806#0" />
-                <element signature="e#5847#6639#0" />
-                <element signature="e#5847#5932#1" />
+                <element signature="e#72#83#0" expanded="true" />
+                <element signature="e#246#1358#0" />
+                <element signature="e#1408#4109#0" />
+                <element signature="e#4152#4933#0" />
+                <element signature="e#4974#5390#0" />
+                <element signature="e#5439#7314#0" />
+                <element signature="e#7357#9355#0" />
               </folding>
             </state>
           </provider>
@@ -187,31 +205,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tenstocks/report/trade.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="295">
+              <caret line="178" column="43" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="43" />
               <folding>
                 <element signature="e#72#87#0" expanded="true" />
-                <element signature="e#3045#3656#0" />
-                <element signature="e#3747#6175#0" />
-                <element signature="e#6222#6511#0" />
+                <element signature="e#279#1676#0" />
+                <element signature="e#1720#3701#0" />
                 <element signature="e#6558#6872#0" />
+                <marker date="1564904162258" expanded="true" signature="6920:6921" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tenstocks/report/strategy.py">
+        <entry file="file://$PROJECT_DIR$/tenstocks/user/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+            <state relative-caret-position="180">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <element signature="e#72#83#0" expanded="true" />
-                <element signature="e#246#1358#0" />
-                <element signature="e#1408#4109#0" />
-                <element signature="e#4152#4933#0" />
-                <element signature="e#4974#5390#0" />
-                <element signature="e#5439#7289#0" />
+                <element signature="e#72#96#0" expanded="true" />
+                <element signature="e#204#2396#0" />
+                <element signature="e#2442#3276#0" />
               </folding>
             </state>
           </provider>
@@ -238,7 +253,13 @@
       <find>print</find>
       <find>logs</find>
       <find>cron</find>
+      <find>n</find>
+      <find>navbar-default</find>
+      <find>'auth.user'</find>
     </findStrings>
+    <dirStrings>
+      <dir>F:\virtualpy\tenstocks\Lib\site-packages\allauth\account</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -249,7 +270,6 @@
         <option value="$PROJECT_DIR$/test_tushare.py" />
         <option value="$PROJECT_DIR$/dev_test/__init__.py" />
         <option value="$PROJECT_DIR$/dev_test/tonghuashun.py" />
-        <option value="$PROJECT_DIR$/model/first_create_model.py" />
         <option value="$PROJECT_DIR$/dev_test/table_create.py" />
         <option value="$PROJECT_DIR$/dev_test/test_macd.py" />
         <option value="$PROJECT_DIR$/dev_test/test_func.py" />
@@ -260,20 +280,42 @@
         <option value="$PROJECT_DIR$/dev_test/strategy.py" />
         <option value="$PROJECT_DIR$/dev_test/test_trade.py" />
         <option value="$PROJECT_DIR$/dev_test/config.py" />
-        <option value="$PROJECT_DIR$/dev_test/utils.py" />
         <option value="$PROJECT_DIR$/tenstocks/utils/util.py" />
         <option value="$PROJECT_DIR$/tenstocks/report/single_strategy.py" />
-        <option value="$PROJECT_DIR$/dev_test/test_log.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/tenstocks/report/trade.py" />
-        <option value="$PROJECT_DIR$/tenstocks/report/strategy.py" />
         <option value="$PROJECT_DIR$/dev_test/schudle_test.py" />
         <option value="$PROJECT_DIR$/dev_test/scheduler.py" />
-        <option value="$PROJECT_DIR$/tenstocks/report/util.py" />
         <option value="$PROJECT_DIR$/tenstocks/report/scheduler.py" />
         <option value="$PROJECT_DIR$/tenstocks/report/pre_data.py" />
+        <option value="$PROJECT_DIR$/model/first_create_model.py" />
+        <option value="$PROJECT_DIR$/tenstocks/utils/base_model.py" />
+        <option value="$PROJECT_DIR$/tenstocks/static/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/base.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tenstocks/tenstocks/settings.py" />
+        <option value="$PROJECT_DIR$/tenstocks/user/urls.py" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/user/register.html" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/user/login.html" />
         <option value="$PROJECT_DIR$/tenstocks/report/report.py" />
         <option value="$PROJECT_DIR$/tenstocks/report/config.py" />
+        <option value="$PROJECT_DIR$/dev_test/utils.py" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/stock/index.html" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/stocks/index.html" />
+        <option value="$PROJECT_DIR$/tenstocks/user/forms.py" />
+        <option value="$PROJECT_DIR$/tenstocks/tenstocks/urls.py" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/行业5日公司.csv" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/行业5日资金流.csv" />
+        <option value="$PROJECT_DIR$/dev_test/test_log.py" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/urls.py" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/utils.py" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/views.py" />
+        <option value="$PROJECT_DIR$/tenstocks/user/models.py" />
+        <option value="$PROJECT_DIR$/tenstocks/templates/user/info.html" />
+        <option value="$PROJECT_DIR$/tenstocks/user/views.py" />
+        <option value="$PROJECT_DIR$/tenstocks/user/utils.py" />
+        <option value="$PROJECT_DIR$/tenstocks/stocks/models.py" />
+        <option value="$PROJECT_DIR$/tenstocks/report/util.py" />
+        <option value="$PROJECT_DIR$/tenstocks/report/trade.py" />
+        <option value="$PROJECT_DIR$/tenstocks/report/strategy.py" />
       </list>
     </option>
   </component>
@@ -294,11 +336,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="225" />
-    <option name="y" value="10" />
-    <option name="width" value="1245" />
-    <option name="height" value="825" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -319,13 +361,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="tenstocks" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenstocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tenstocks" type="b2602c69:ProjectViewProjectNode" />
@@ -340,18 +386,29 @@
             </path>
             <path>
               <item name="tenstocks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+              <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+              <item name="stocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenstocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+              <item name="tenstocks" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="I:/projects/weixin_tianjiahaoyou" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="H:/1AA项目文件夹/bid_tender" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -361,7 +418,11 @@
       <recent name="G:\myprojects\tenstocks\dev_test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\myprojects\tenstocks\tenstocks\report" />
+      <recent name="G:\myprojects\tenstocks\tenstocks\stocks" />
+      <recent name="G:\myprojects\tenstocks\dev_test" />
+      <recent name="G:\myprojects\tenstocks\tenstocks\templates" />
+      <recent name="G:\myprojects\tenstocks\tenstocks\templates\user" />
+      <recent name="G:\myprojects\tenstocks\tenstocks\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -376,7 +437,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.report">
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" singleton="true" temporary="true">
+      <module name="tenstocks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tenstocks" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tenstocks/manage.py" />
+      <option name="PARAMETERS" value="runserver 127.0.0.1:8000 --noreload" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="report" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tenstocks" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -421,28 +504,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_email" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="tenstocks" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dev_test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dev_test/test_email.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test_log" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tenstocks" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -465,7 +526,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_trade" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tenstocks" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -473,12 +534,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dev_test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tenstocks/stocks" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dev_test/test_trade.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tenstocks/stocks/utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -488,19 +549,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_trade" />
-      <item itemvalue="Python.test_email" />
       <item itemvalue="Python.test_log" />
       <item itemvalue="Python.schudle_test" />
       <item itemvalue="Python.report" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.utils" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.test_log" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.report" />
         <item itemvalue="Python.schudle_test" />
-        <item itemvalue="Python.test_log" />
-        <item itemvalue="Python.test_trade" />
-        <item itemvalue="Python.test_email" />
       </list>
     </recent_temporary>
   </component>
@@ -527,29 +588,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23257373" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10857909" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36737588" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35886526" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5219858" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3219858" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32907802" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.26206434" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,33 +621,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tenstocks/report/util.py</url>
-          <line>122</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tenstocks/report/util.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="next_week_mid" language="Python" />
-        <watch expression="last_close" language="Python" />
-        <watch expression="next_week_low" language="Python" />
-      </configuration>
-    </watches-manager>
-  </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
         <expression-string>next_week_low</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>print(data_section_1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -623,389 +668,351 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>sign_change_index</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>week_boll_up_df.iloc[-2]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/talib/abstract.py">
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/allauth/app_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-502" />
-      </provider>
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/talib/stream.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/talib/deprecated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/talib/test_data.py">
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/allauth/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-560" />
-      </provider>
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/talib/test_func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1386">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test_002701.csv" />
-    <entry file="file://F:/Python36-32/Lib/smtplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="889" column="23" lean-forward="true" selection-start-line="889" selection-start-column="23" selection-end-line="889" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://F:/Python36-32/Lib/datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1397">
-          <caret line="176" column="4" selection-start-line="176" selection-start-column="4" selection-end-line="176" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/kdj.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/tonghuashun.py" />
-    <entry file="file://$PROJECT_DIR$/dev_test/test_price.py" />
-    <entry file="file://$PROJECT_DIR$/dev_test/test_macd.py" />
-    <entry file="file://$PROJECT_DIR$/dev_test/test_func.py" />
-    <entry file="file://$PROJECT_DIR$/dev_test/cc.csv" />
-    <entry file="file://$PROJECT_DIR$/dev_test/test_html.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/table_create.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test_email.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test_tushare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/tenstocks/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/utils/util.py" />
-    <entry file="file://$PROJECT_DIR$/dev_test/strategy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="521" column="17" lean-forward="true" selection-start-line="521" selection-start-column="17" selection-end-line="521" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="122" selection-start-line="122" selection-end-line="244" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/Python36-32/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-973">
-          <caret line="1737" column="4" selection-start-line="1737" selection-start-column="4" selection-end-line="1737" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="218">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="398">
           <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test_log.py">
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/urls/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="68" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="9" selection-end-column="68" />
+        <state relative-caret-position="88">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/test_trade.py">
+    <entry file="file://$PROJECT_DIR$/tenstocks/templates/user/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="265" column="68" lean-forward="true" selection-start-line="230" selection-end-line="265" selection-end-column="68" />
+        <state relative-caret-position="250">
+          <caret line="32" column="67" lean-forward="true" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/templates/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/report/scheduler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_test/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="251" selection-start-line="251" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5317237c-2277-4fee-b932-834932d5aba2/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/forms/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="408" selection-start-line="408" selection-end-line="408" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/contrib/sessions/backends/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/tenstocks/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/report/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/utils/base_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/first_create_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="-165">
+          <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/apscheduler/jobstores/memory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#225#335#1" />
-            <element signature="e#369#583#0" />
-            <element signature="e#627#679#0" />
-            <element signature="e#722#972#0" />
-            <element signature="e#844#948#0" />
-            <element signature="e#1015#1076#0" />
-            <element signature="e#1114#1147#0" />
-            <element signature="e#1185#1484#0" />
-            <element signature="e#1525#2310#0" />
-            <element signature="e#1671#1755#0" />
-            <element signature="e#2094#2249#0" />
-            <element signature="e#2354#2601#0" />
-            <element signature="e#2642#2687#0" />
-            <element signature="e#2721#2743#0" />
-            <element signature="e#2802#3654#0" />
-            <element signature="e#2802#3021#1" />
-            <element signature="e#3162#3635#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/pymongo/mongo_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/logs/log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/apscheduler/schedulers/blocking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="e#421#530#0" />
-            <element signature="e#575#646#0" />
-            <element signature="e#906#923#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/scheduler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <marker date="1563195329482" expanded="true" signature="1392:1397" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev_test/schudle_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="21" />
-          <folding>
-            <element signature="e#73#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="1485" selection-start-line="1485" selection-end-line="1485" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/apscheduler/schedulers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="376" column="41" selection-start-line="376" selection-start-column="41" selection-end-line="376" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/pre_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#154#626#0" />
-            <element signature="e#687#1289#0" />
-            <element signature="e#1345#1573#0" />
-            <element signature="e#1644#2389#0" />
-            <element signature="e#2452#2740#0" />
-            <element signature="e#2765#2912#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/行业5日公司.csv" />
     <entry file="file://$PROJECT_DIR$/tenstocks/report/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="e#429#507#0" />
-          </folding>
+        <state relative-caret-position="99">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/util.py">
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/行业5日资金流.csv" />
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/行业5日资金流 .csv" />
+    <entry file="file://$PROJECT_DIR$/dev_test/行业5日资金流 - 副本1.csv" />
+    <entry file="file://$PROJECT_DIR$/dev_test/行业5日资金流 .csv" />
+    <entry file="file://$PROJECT_DIR$/tenstocks/tenstocks/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+        <state relative-caret-position="280">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://798292cb-064e-48fb-a858-ff975f848e65/schema/main/table/stocks_money_out">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://798292cb-064e-48fb-a858-ff975f848e65/schema/main/table/stocks_weekcompany">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/utils/deprecation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/report/report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://798292cb-064e-48fb-a858-ff975f848e65/schema/main/table/stocks_a_stocks">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev_test/test_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://798292cb-064e-48fb-a858-ff975f848e65/schema/main/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="42" column="46" lean-forward="true" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/templates/stocks/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/templates/user/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/virtualpy/tenstocks/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="1732" column="36" lean-forward="true" selection-start-line="1732" selection-start-column="36" selection-end-line="1732" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/user/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#259#293#0" />
-            <element signature="e#417#1633#0" />
-            <element signature="e#815#849#0" />
-            <element signature="e#1292#1566#0" />
-            <element signature="e#2427#2591#1" />
-            <element signature="e#2783#2932#0" />
-            <element signature="e#3008#3157#0" />
-            <element signature="e#3204#3687#0" />
-            <element signature="e#3334#3502#0" />
-            <element signature="e#3604#3687#0" />
-            <element signature="e#3855#4030#0" />
-            <element signature="e#4183#4354#0" />
-            <element signature="e#5068#5239#0" />
-            <element signature="e#5533#5806#0" />
-            <element signature="e#5597#5806#0" />
-            <element signature="e#5847#6639#0" />
-            <element signature="e#5847#5932#1" />
+            <element signature="e#72#96#0" expanded="true" />
+            <element signature="e#204#2396#0" />
+            <element signature="e#2442#3276#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tenstocks/report/trade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="295">
+          <caret line="178" column="43" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="43" />
           <folding>
             <element signature="e#72#87#0" expanded="true" />
-            <element signature="e#3045#3656#0" />
-            <element signature="e#3747#6175#0" />
-            <element signature="e#6222#6511#0" />
+            <element signature="e#279#1676#0" />
+            <element signature="e#1720#3701#0" />
             <element signature="e#6558#6872#0" />
+            <marker date="1564904162258" expanded="true" signature="6920:6921" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/report/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#72#87#0" expanded="true" />
+            <element signature="e#420#1636#0" />
+            <element signature="e#1693#2359#0" />
+            <element signature="e#2430#5497#0" />
+            <element signature="e#5536#5809#0" />
+            <element signature="e#5850#6642#0" />
+            <element signature="e#6690#7018#0" />
+            <element signature="e#7094#9229#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenstocks/stocks/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
+          <folding>
+            <element signature="e#129#1712#0" />
+            <element signature="e#1749#3100#0" />
+            <element signature="e#3136#3464#0" />
+            <element signature="e#3499#9354#0" />
+            <element signature="e#9391#13613#0" />
+            <element signature="e#13650#15671#0" />
+            <marker date="1564899578285" expanded="true" signature="13665:13670" ph="..." />
+            <marker date="1564899578285" expanded="true" signature="15721:15726" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tenstocks/report/strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+        <state relative-caret-position="541">
+          <caret line="342" column="53" lean-forward="true" selection-start-line="342" selection-start-column="53" selection-end-line="342" selection-end-column="53" />
           <folding>
             <element signature="e#72#83#0" expanded="true" />
             <element signature="e#246#1358#0" />
             <element signature="e#1408#4109#0" />
             <element signature="e#4152#4933#0" />
             <element signature="e#4974#5390#0" />
-            <element signature="e#5439#7289#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/single_strategy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
-          <folding>
-            <element signature="e#101#1179#0" />
-            <element signature="e#1222#2499#0" />
-            <element signature="e#2528#3061#0" />
-            <element signature="e#3090#3142#0" />
-            <element signature="e#3183#4723#0" />
-            <element signature="e#4752#5966#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/scheduler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#176#237#0" expanded="true" />
-            <element signature="e#587#1599#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenstocks/report/report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
-          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
-          <folding>
-            <element signature="e#72#87#0" expanded="true" />
+            <element signature="e#5439#7314#0" />
+            <element signature="e#7357#9355#0" />
           </folding>
         </state>
       </provider>

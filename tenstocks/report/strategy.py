@@ -8,8 +8,6 @@ import pandas
 
 from util import get_float, cut_short_period, get_peak_index, deviation_judge, swing_vol_warning
 
-from report.util import deviation_macd_judge
-
 
 def trend(df, n: int = 20, period='week'):
     """
@@ -213,7 +211,7 @@ def deviation(df):
     # for _ in range(1,n):
     #     section_name=f'macd_section_{_}'
     #     section_name=data_df.iloc[sign_change_index[_-1]:sign_change_index[_]+1]
-    print(data_section_1)
+
     section_2_length = sign_change_index[2] - sign_change_index[1]
     # 找极值
     peak_index = get_peak_index(data_section_1)
@@ -292,57 +290,4 @@ def give_advice(res,period='day'):
 
     return advice
 
-def deviation_macd(df):
-    # 1.根据MACD 值
-    # 1.1 判断趋势区间
-    # 1.2 判断阶段最大值
-    # 1.3 计算最大值的差值 给出背离结论
-    macd_sign = pandas.DataFrame()
-    data_df = copy.deepcopy(df.loc[:, ['trade_date', 'close', 'MACD', 'vol', 'vol_MA_10', 'swing']])
 
-    data_df.dropna(axis=0, inplace=True)
-    data_df.sort_index(ascending=True, inplace=True)
-    # MACD的正负符号
-    macd_sign['MACD_sign'] = data_df['MACD'] / abs(data_df['MACD'])
-
-    # 记录macd符号变化的index
-    sign_change_index = [0, ]
-    for i in range(macd_sign.shape[0] - 1):
-        if data_df['MACD'].iloc[i] * data_df['MACD'].iloc[i + 1] < 0:
-            sign_change_index.append(i)
-    # print(sign_change_index)
-    # 进行小于4的区间去除
-    cut_short_period(sign_change_index)
-    # print(sign_change_index)
-
-    data_section_1 = data_df.iloc[0:sign_change_index[1] + 1]
-    # 将分区代码简化
-    # n=4
-    # for _ in range(1,n):
-    #     section_name=f'macd_section_{_}'
-    #     section_name=data_df.iloc[sign_change_index[_-1]:sign_change_index[_]+1]
-    print(data_section_1)
-    section_2_length = sign_change_index[2] - sign_change_index[1]
-    # 找极值
-    peak_index = get_peak_index(data_section_1)
-
-
-    # 如果第一个区间有多个极值，就可以直接判断背离
-    if len(peak_index) > 1:
-        deviation_status = deviation_macd_judge((data_section_1, peak_index))
-    elif section_2_length > 10:
-        # 当第二个区间太长，就失去判断背离的时间基础
-        deviation_status = {}
-        waring_res = swing_vol_warning(data_section_1)
-        if waring_res:
-            deviation_status['swing_vol_warning'] = waring_res
-    else:
-        # 否则，需要倒数 1,3两个区间进行判断
-        data_section_3 = data_df.iloc[sign_change_index[2] + 1:sign_change_index[3] + 1]
-        # print(macd_section_3)
-        peak_index_3 = get_peak_index(data_section_3)
-
-        deviation_status = deviation_macd_judge((data_section_1, peak_index), (data_section_3, peak_index_3))
-        # print(deviation_status)
-
-    return deviation_status

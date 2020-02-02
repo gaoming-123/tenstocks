@@ -167,35 +167,3 @@ def index_check(index_code, name='指数'):
     report_text = f"{header}{res_week}{res_day}{res_hour}"
     return report_text
 
-
-
-def stock_week_check(stock_code, asset='E'):
-    start_day = datetime.datetime.strptime(str(datetime.date.today()), '%Y-%m-%d') + datetime.timedelta(days=-1200)
-    start_date = start_day.date().strftime('%Y%m%d')
-    month_df = ts.pro_bar(ts_code=stock_code, freq='M', asset=asset, adj='qfq')
-    month_df.sort_values(by='trade_date', inplace=True)
-    my_BOLL(month_df)
-    my_MACD(month_df)
-    month_deviation_res = deviation_macd(month_df)
-    print(month_deviation_res)
-    week_df = ts.pro_bar(ts_code=stock_code, start_date=start_date, asset=asset, freq='W', adj='qfq')
-    week_df.sort_values(by='trade_date', inplace=True)
-    my_BOLL(week_df)
-    my_MA(week_df)
-    my_MA(week_df, item='vol', timeperiod=(10,))
-    my_swing(week_df)
-    my_MACD(week_df)
-    my_KDJ(week_df)
-    price_res = week_price_section(month_df, week_df)
-    print(price_res)
-    # print(price_res)
-    trend_res = trend(week_df)
-    print(trend_res)
-    # print(trend_res)
-    probab_res = probability(week_df)
-    print(probab_res)
-    # print(probab_res)
-    deviation_res = deviation(week_df)
-    print(deviation_res)
-
-stock_week_check('002701.SZ')

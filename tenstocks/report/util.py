@@ -9,9 +9,6 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 
-
-
-
 def get_float(value, n: int = 2):
     x = f'%.{n}f'
     return x % value
@@ -43,7 +40,7 @@ def send_res_to_email(to_addr: list = ['451574449@qq.com'], theme='输出报告'
     try:
         server = smtplib.SMTP()
         server.connect(smtp_server, 25)  # 连接SMTP服务器
-        server.set_debuglevel(1)  # 打印调试信息
+        #server.set_debuglevel(1)  # 打印调试信息
         server.login(from_addr, password)  # 登陆邮箱
         server.sendmail(from_addr, to_addr, msg.as_string())  # 发送邮件
         print("Send successfully!")
@@ -193,56 +190,3 @@ def get_complete_html(day,html_content):
 </body></html>
     """
     return html
-
-
-def deviation_macd_judge(section_1: tuple, section_2: tuple = None):
-    """
-    根据价格 和 MACD   来判断是否背离
-    以及判断振幅和量能的异常
-    :param section_1: 离现在最近的区间  (DateFrame数据,index 列表)
-    :param section_2: 倒数第三个区间
-    :return:  背离状态
-    """
-    deviation_status = {}
-    if section_2:
-        data_df1, peak_index1 = section_1
-        up_sign = 1 if data_df1['MACD'].iloc[peak_index1[0]] > 0 else -1
-        section_1_close_macd = (data_df1['close'].iloc[peak_index1[0]], data_df1['MACD'].iloc[peak_index1[0]])
-        data_df3, peak_index3 = section_2
-        section_2_close_macd = (data_df3['close'].iloc[peak_index3[0]], data_df3['MACD'].iloc[peak_index3[0]])
-        if len(peak_index3) > 1:
-            # 判断出最大的macd值的index
-            close_macd_list = []
-            macd_list = []
-            for i in peak_index3:
-                close_macd_list.append((data_df3['close'].iloc[i], data_df3['MACD'].iloc[i], data_df3['kdj_D'].iloc[i]))
-                macd_list.append(abs(data_df3['MACD'].iloc[i]))
-            max_macd = max(macd_list)
-            for close_macd in close_macd_list:
-                if close_macd[1] == max_macd:
-                    section_2_close_macd = close_macd
-
-        # 判断背离
-        if (section_1_close_macd[0] - section_2_close_macd[0]) * (
-                section_1_close_macd[1] - section_2_close_macd[1]) < 0:
-            if up_sign > 0:
-                deviation_status['macd_deviation_status'] = '上涨MACD背离'
-            else:
-                deviation_status['macd_deviation_status'] = '下跌MACD背离'
-
-    else:
-        data_df1, peak_index = section_1
-        up_sign = 1 if data_df1['MACD'].iloc[peak_index[0]] > 0 else -1
-        if (data_df1['close'].iloc[peak_index[0]] - data_df1['close'].iloc[peak_index[1]]) * \
-                (data_df1['MACD'].iloc[peak_index[0]] - data_df1['MACD'].iloc[peak_index[1]]) < 0:
-            if up_sign > 0:
-                deviation_status['macd_deviation_status'] = '上涨MACD背离'
-            else:
-                deviation_status['macd_deviation_status'] = '下跌MACD背离'
-
-    # 量能异常 和 振幅异常提示
-    warning_res = swing_vol_warning(data_df1)
-    if warning_res:
-        deviation_status['swing_vol_warning'] = warning_res
-
-    return deviation_status

@@ -13,42 +13,44 @@ from scheduler import My_scheduler
 
 logging.basicConfig(filename='logs/log.txt',filemode="a+",
                     format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
-                    datefmt="%Y-%m-%d %H:%M:%S", level=logging.ERROR)
+                    datefmt="%Y-%m-%d %H:%M:%S", level=logging.INFO)
 
 def main():
     html=''
     count = 0
     for k, stock in MY_STOCKS.items():
-        logging.info(stock)
+        # logging.info(stock)
         count += 1
         try:
             report = stock_check(stock, name=k)
             html += report
+            logging.info(stock)
         except Exception as exp:
             logging.exception(exp)
-        if count % 5 == 0:
-            time.sleep(50)
+        if count % 4 == 0:
+            time.sleep(60)
     for name, index in INDEX_S.items():
-        logging.info(index)
+        # logging.info(index)
         count += 1
         try:
             report = index_check(index, name=name)
             html += report
+            logging.info(index)
         except Exception as exp:
             logging.exception(exp)
-        if count % 5 == 0:
-            time.sleep(50)
+        if count % 4 == 0:
+            time.sleep(60)
     today=str(datetime.date.today())
     html=get_complete_html(today,html)
-    print(html)
+    #print(html)
     theme=f'{today}**诊判报告'
-    # send_res_to_email(contents=html,theme=theme,content_type='html')
+    send_res_to_email(contents=html,theme=theme,content_type='html')
 
 
 
 
 if __name__ == '__main__':
-    main()
-    # scheduler=My_scheduler()
-    # scheduler.add_job(main,'cron', day_of_week='0-4', hour=20, minute=0, second=0)
-    # scheduler.start()
+    #main()
+    scheduler=My_scheduler()
+    scheduler.add_job(main,'cron', day_of_week='0,1,2,3,5,6', hour=17, minute=29, second=0)
+    scheduler.start()

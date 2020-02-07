@@ -1,58 +1,45 @@
-{% extends '../base.html'%}
+{% extends 'stocks/base.html'%}
 {% load static %}
 
+
+
 {% block content%}
-
-<div class="col-lg-4">
-    <br>
-    <form action="" method="post" enctype="multipart/form-data" class="form-inline">
-        {% csrf_token %}
-        <div class="form-group">
-            <p class="form-control-static">股票代码：&nbsp;</p>
-        </div>
-        <div class="form-group">
-            <!--<label for="stock_code" class="sr-only">Password</label>-->
-            <input type="text" class="form-control col-md-5" id="stock_code" placeholder="股票6位代码">
-        </div>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button type="submit" class="btn btn-primary ">添&nbsp;&nbsp; 加</button>
-    </form>
+<br>
+<br>
+<br>
+<br>
+<div class="col-lg-3"></div>
+<div class="container col-lg-6">
+    <h3 class="center">hhh</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">序号</th>
+      <th scope="col">股票名称</th>
+      <th scope="col">股票代码</th>
+      <th scope="col">删除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td class="glyphicon glyphicon-remove"></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="container col-lg-4">
-
-    <h2 class="text-center">关注个股</h2>
-    <br>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>股票名称</th>
-            <th>股票代码</th>
-            <th>现价</th>
-            <th>删除</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><a class="center-block" href=""> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-        </tr>
-        <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><a href="">删除</a></td>
-        </tr>
-        <tr>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td><a href="">删除</a></td>
-        </tr>
-        </tbody>
-    </table>
-
-</div>
-
 {% endblock %}

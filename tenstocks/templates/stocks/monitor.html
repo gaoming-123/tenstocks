@@ -1,0 +1,484 @@
+{% extends 'stocks/base.html'%}
+{% load static %}
+
+{% block content%}
+<div class="row">
+
+</div>
+<div class="row">
+    <div class="col-sm-6"><div id="main" style="width: 900px;height:900px;"></div></div>
+    <div class="col-sm-6"><div id="main1" style="width: 900px;height:900px;"></div></div>
+</div>
+<div class="row">
+    <div class="col-sm-6"><div id="main2" style="width: 900px;height:900px;"></div></div>
+    <div class="col-sm-6"><div id="main3" style="width: 900px;height:900px;"></div></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6"><div id="main4" style="width: 900px;height:900px;"></div></div>
+    <div class="col-sm-6"><div id="main5" style="width: 900px;height:900px;"></div></div>
+</div>
+
+<div id="market" style="width: 900px;height:600px;"></div>
+{% endblock %}
+
+{% block footer_js %}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+    data = {{datas | safe}};
+
+    var dateList = data.map(function (item) {
+        return item[0];
+    });
+    var valueList = data.map(function (item) {
+        return item[1];
+    });
+        var valueList1 = data.map(function (item) {
+        return item[2];
+    });
+
+    var option = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '5日主力资金流出比例(东方财富网行业资金流数据)\n周资金流出比例大于6-7%，趋势发生将逆转'
+        }, {
+            top: '50%',
+            left: 'center',
+            text: '5日主力资金净流出绝对值（东方财富网行业资金流数据）'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: valueList
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: valueList1,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById('main1'));
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var myChart3 = echarts.init(document.getElementById('main3'));
+    var myChart4 = echarts.init(document.getElementById('main4'));
+    var myChart5 = echarts.init(document.getElementById('main5'));
+    data = {{ markets | safe}};
+    var dateList = data.map(function (item) {
+        return item[0];
+    });
+    var day_mid_amount = data.map(function (item) {
+        return item[1];
+    });
+    var day_mid_pe = data.map(function (item) {
+    return item[2];
+    });
+    var day_mid_pe_ttm = data.map(function (item) {
+    return item[3];
+    });
+    var day_mid_pb = data.map(function (item) {
+    return item[4];
+    });
+    var day_low_10 = data.map(function (item) {
+    return item[5];
+    });
+    var day_up_10 = data.map(function (item) {
+    return item[6];
+    });
+    var turnover_rate_f = data.map(function (item) {
+    return item[7];
+    });
+    var turnover_rate = data.map(function (item) {
+    return item[8];
+    });
+    var pb_lt_1 = data.map(function (item) {
+    return item[9];
+    });
+    var sh_rzrqye = data.map(function (item) {
+    return item[10];
+    });
+    var sz_rzrqye = data.map(function (item) {
+    return item[11];
+    });
+    var sh_rqye = data.map(function (item) {
+    return item[12];
+    });
+    var sz_rqye = data.map(function (item) {
+    return item[13];
+    });
+
+
+
+    var option1 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '市场成交额中位数(万元)'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '市场换手率(%)'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: day_mid_amount
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: turnover_rate,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    var option2 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '市场PE中位数'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '市场PB中位数'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: day_mid_pe
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: day_mid_pb,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    var option3 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '市场破净数'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '市场涨停数'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: pb_lt_1,
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: day_up_10,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    var option4 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '上海融资融券余额'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '深圳融资融券余额'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: sh_rzrqye,
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: sz_rzrqye,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    var option5 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+
+
+        title: [{
+            left: 'center',
+            text: '上海融券余额'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '深圳融券余额'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: sh_rqye,
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: sz_rqye,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+    myChart4.setOption(option4);
+    myChart5.setOption(option5);
+</script>
+{% endblock %}

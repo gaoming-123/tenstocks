@@ -1,0 +1,15 @@
+
+在settings中导入配置信息
+from login.settings import *
+
+INSTALLED_APPS = [
+    ....
+    'login',# 加入login模块
+    'captcha',# 加入captcha验证码模块
+]
+
+安装captcha
+
+pip install django-simple-captcha
+在项目下添加url路径
+# path('captcha/', include('captcha.urls')),

@@ -112,3 +112,5 @@ log.txt
 .idea/
 tenstocks/user/migrations/
 tenstocks/stocks/migrations/
+pick_result/
+dev_test/

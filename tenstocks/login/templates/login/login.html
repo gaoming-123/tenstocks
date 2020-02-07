@@ -1,0 +1,53 @@
+{% extends 'login/base.html' %}
+{% load static %}
+
+{% block status %}
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            {#            <a href="">{{ request.session.nickname }}</a>#}
+            <a href="{% url 'login:login' %}">登录</a>
+        </li>
+        <li>
+            <a href="{% url 'login:register' %}">注册</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-4"></div>
+    <div class="container col-lg-3">
+
+        <form action="" method="post" class="form-signin center-block">
+            {% csrf_token %}
+            <h2 class="form-signin-heading text-center">登录</h2>
+            <br>
+            <label for="inputPhone" class="sr-only">电话</label>
+            <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="请输入手机号码" required
+                   autofocus>
+            <p class="am-text-danger">{{ form.errors.phone.0 }}</p>
+            <label for="inputPassword" class="sr-only">密码</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="请输入密码" required>
+            <p class="am-text-danger">{{ form.errors.password.0 }}</p>
+            {{ form.captcha.label_tag }}
+            {{ form.captcha }}
+            <p class="am-text-danger">{{ form.errors.captcha.0 }}</p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> 记住我
+                </label>
+            </div>
+            <div class="agree">
+                <div class="col-lg-7"></div>
+                <a href="{% url 'login:register' %}">免费注册</a> &nbsp; &nbsp;
+                <!--<div class="col-lg-2"></div>-->
+                <a href="" class="forget">忘记密码？</a>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登 &nbsp; &nbsp; &nbsp;录</button>
+        </form>
+
+    </div>
+{% endblock %}

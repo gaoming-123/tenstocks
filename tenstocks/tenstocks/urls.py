@@ -21,7 +21,9 @@ urlpatterns = [
     # path('^$', admin.site.urls),
     path('admin/', admin.site.urls),
 
-    path('auth/', include('allauth.urls')),
-    path('user/', include('user.urls',namespace='user')),
+    # path('auth/', include('allauth.urls')),
+    # path('user/', include('user.urls',namespace='user')),
+    path('login/', include('login.urls',namespace='login')),
     path('stocks/', include('stocks.urls',namespace='stocks')),
+    path('captcha',include('captcha.urls')) # 验证码
 ]

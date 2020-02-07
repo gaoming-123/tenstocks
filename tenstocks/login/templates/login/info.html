@@ -1,0 +1,74 @@
+{% extends 'login/base.html'%}
+{% load static %}
+{% block status %}
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            {#            <a href="">{{ request.session.nickname }}</a>#}
+            {% if nickname %}
+
+            {% endif %}
+            <a href="">{{ nickname }}</a>
+        </li>
+        <li>
+            <a href="{% url 'login:logout' %}">退出</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content%}
+<br>
+<br>
+<br>
+<br>
+<div class="col-lg-4"></div>
+<div class="container col-lg-4">
+    <h2 class="text-center">个人资料</h2>
+    <br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!--<li>-->
+        <!--<i style="margin-top: 25px;">头像</i>-->
+        <!--<div class="infor-pic">-->
+        <!--<img src="{{ MEDIA_URL }}{{ user.head }}"/>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<input type="file" name="head">-->
+        <!--</li>-->
+
+        <div class="input-prepend input-group col-md-12 col-xs-12">
+            <label class="add-on input-group-addon" for="user-nickname">昵称</label>
+            <input id="user-nickname" name="nickname" type="text" maxlength="32"
+                   {% if nickname %}
+                       value="{{nickname}}"
+                   {% endif %}
+                   placeholder="昵称" class="form-control">
+        </div>
+        <br>
+        <div class="input-prepend input-group col-md-12 col-xs-12">
+            <label class="add-on input-group-addon" for="user-email">邮箱</label>
+            <input id="user-email" name="email" type="text" maxlength="32"
+                   {% if nickname %}
+                       value="{{email}}"
+                   {% endif %}
+                   placeholder="邮箱" class="form-control">
+        </div>
+        <br>
+        <div class="input-prepend input-group col-md-12 col-xs-12">
+            <label class="add-on input-group-addon" for="user-sign">签名</label>
+            <input id="user-sign" name="sign" type="text" maxlength="32"
+                   {% if nickname %}
+                       value="{{sign}}"
+                   {% endif %}
+                   placeholder="个性签名（最多32个字符）" class="form-control">
+        </div>
+        <p class="danger">{{message}}</p>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block " type="submit">  提 &nbsp;&nbsp;&nbsp;&nbsp; 交</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

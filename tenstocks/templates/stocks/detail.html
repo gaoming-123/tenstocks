@@ -1,0 +1,323 @@
+{% extends 'stocks/base.html'%}
+{% load static %}
+
+
+{% block content%}
+<dl class="row">
+        <dt class="col-sm-1">名称：</dt>
+    <dd class="col-sm-1">{{stock.name}}</dd>
+    <dt class="col-sm-1">股票代码：</dt>
+    <dd class="col-sm-1">{{stock.ts_code}}</dd>
+    <dt class="col-sm-1">所属行业：</dt>
+    <dd class="col-sm-1">{{stock.industry}}</dd>
+    <dt class="col-sm-1">PE：</dt>
+    <dd class="col-sm-1">20</dd>
+    <dt class="col-sm-1">PB：</dt>
+    <dd class="col-sm-1">2</dd>
+    <dt class="col-sm-1">收益率：</dt>
+    <dd class="col-sm-1">20%</dd>
+</dl>
+    <p>周线：</p>
+<dl class="row">
+    <dt class="col-sm-1">MACD</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">BOLL</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">KDJ</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">MA20</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+
+</dl>
+    <p>日线：</p>
+<dl class="row">
+
+    <dt class="col-sm-1">MACD</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">BOLL</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">KDJ</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+    <dt class="col-sm-1">MA20</dt>
+    <dd class="col-sm-1">A description list is perfect for defining terms.</dd>
+
+
+</dl>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div id="main" style="width: 900px;height:500px;"></div>
+    </div>
+    <div class="col-sm-6">
+        <div id="main1" style="width: 900px;height:500px;"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div id="main2" style="width: 900px;height:500px;"></div>
+    </div>
+    <div class="col-sm-6">
+        <div id="main3" style="width: 900px;height:500px;"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer_js %}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    data = {{ trade_data | safe }};
+
+    var dateList = data.map(function (item) {
+        return item[0];
+    });
+    var close = data.map(function (item) {
+        return item[1];
+    });
+    var amount = data.map(function (item) {
+        return item[2];
+    });
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+        },
+        legend: {
+            data: ['收盘价', '成交量(万元)']
+        },
+        xAxis: [
+            {
+                data: dateList,
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '成交额(万元)',
+
+            },
+            {
+                type: 'value',
+                name: '收盘价',
+                // min: 0,
+                // max: 5,
+                // interval: 1,
+                // axisLabel: {
+                // formatter: '{value} '
+                // }
+            },
+
+        ],
+        series: [
+            {
+                name: '成交额(万元)',
+                type: 'bar',
+                data: amount,
+            },
+            {
+                name: '收盘价',
+                type: 'line',
+                yAxisIndex: 1,
+                data: close,
+            },
+
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main1'));
+
+    data = {{ rzrq | safe }};
+
+    var dateList = data.map(function (item) {
+        return item[0];
+    });
+    var rzrqye = data.map(function (item) {
+        return item[2];
+    });
+    var rzyezb = data.map(function (item) {
+        return item[3];
+    });
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        legend: {
+            data: ['融资融券余额', '市值占比']
+        },
+        xAxis: [
+            {
+                data: dateList,
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '融资融券余额',
+
+            },
+            {
+                type: 'value',
+                name: '市值占比',
+                // min: 0,
+                // max: 5,
+                // interval: 1,
+                // axisLabel: {
+                // formatter: '{value} '
+                // }
+            },
+
+        ],
+        series: [
+            {
+                name: '融资融券余额',
+                type: 'line',
+                data: rzrqye,
+            },
+            {
+                name: '融资余额/市值占比',
+                type: 'line',
+                yAxisIndex: 1,
+                data: rzyezb,
+            },
+
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var myChart3 = echarts.init(document.getElementById('main3'));
+
+    data = {{ fin_data | safe }};
+
+    var dateList = data.map(function (item) {
+        return item[0];
+    });
+    var netprofit_margin = data.map(function (item) {
+        return item[1];
+    });
+    var profit_dedt = data.map(function (item) {
+        return item[2];
+    });
+    var q_roe = data.map(function (item) {
+        return item[3];
+    });
+    var tr_yoy = data.map(function (item) {
+        return item[4];
+    });
+    var option2 = {
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        legend: {
+            data: ['扣非净利润', '净资产收益率(单季度)']
+        },
+        xAxis: [
+            {
+                data: dateList,
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '扣非净利润',
+
+            },
+            {
+                type: 'value',
+                name: '净资产收益率(单季度)',
+                // min: 0,
+                // max: 5,
+                // interval: 1,
+                // axisLabel: {
+                // formatter: '{value} '
+                // }
+            },
+
+        ],
+        series: [
+            {
+                name: '扣非净利润',
+                type: 'bar',
+                data: profit_dedt,
+            },
+            {
+                name: '净资产收益率(单季度)',
+                type: 'line',
+                yAxisIndex: 1,
+                data: q_roe,
+            },
+
+        ]
+    };
+    var option3 = {
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        legend: {
+            data: ['营业总收入同比增长率', '销售净利率']
+        },
+        xAxis: [
+            {
+                data: dateList,
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '营业总收入同比增长率',
+
+            },
+            {
+                type: 'value',
+                name: '销售净利率',
+                // min: 0,
+                // max: 5,
+                // interval: 1,
+                // axisLabel: {
+                // formatter: '{value} '
+                // }
+            },
+
+        ],
+        series: [
+            {
+                name: '营业总收入同比增长率',
+                type: 'line',
+                data: tr_yoy,
+            },
+            {
+                name: '销售净利率',
+                type: 'line',
+                // yAxisIndex: 1,
+                data: netprofit_margin,
+            },
+
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+</script>
+{% endblock %}

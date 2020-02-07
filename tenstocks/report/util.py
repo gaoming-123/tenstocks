@@ -7,7 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.header import Header
-
+from redisc import redis_cli
 
 def get_float(value, n: int = 2):
     x = f'%.{n}f'
@@ -190,3 +190,10 @@ def get_complete_html(day,html_content):
 </body></html>
     """
     return html
+
+
+def get_stocks():
+    return [_.decode('utf-8') for _ in redis_cli.read_stocks()]
+
+def get_index():
+    return [_.decode('utf-8') for _ in redis_cli.read_index()]

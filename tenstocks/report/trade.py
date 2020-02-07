@@ -14,6 +14,7 @@ ts.set_token(MY_TOKEN)
 
 def trade_hour(stock_code, asset='E'):
     start_day = datetime.datetime.strptime(str(datetime.date.today()), '%Y-%m-%d') + datetime.timedelta(days=-70)
+    # start_day = datetime.datetime.strptime('2019-01-23', '%Y-%m-%d') + datetime.timedelta(days=-70)
     start_date = start_day.date().strftime('%Y%m%d')
     hour_df = ts.pro_bar(ts_code=stock_code, freq='60min', asset=asset, start_date=start_date, adj='qfq')
     # print(hour_df.shape)
@@ -153,8 +154,9 @@ def stock_check(stock_code, name='个股'):
     header = f"<hr><div>股票名称：<u>{name}</u> 个股代码： <u>{stock_code}</u></div>"
     res_week = trade_week(stock_code)
     res_day = trade_day(stock_code)
-    res_hour = trade_hour(stock_code)
-    report_text = f"{header}{res_week.strip()}{res_day.strip()}{res_hour.strip()}"
+    # res_hour = trade_hour(stock_code)
+    # report_text = f"{header}{res_week.strip()}{res_day.strip()}{res_hour.strip()}"
+    report_text = f"{header}{res_week.strip()}{res_day.strip()}"
     return report_text
 
 
@@ -163,7 +165,12 @@ def index_check(index_code, name='指数'):
     header=f"<hr><div>指数名称：<u>{name}</u> 指数代码： <u>{index_code}</u></div>"
     res_week = trade_week(index_code, asset='I')
     res_day = trade_day(index_code, asset='I')
-    res_hour = trade_hour(index_code, asset='I')
-    report_text = f"{header}{res_week}{res_day}{res_hour}"
+    # res_hour = trade_hour(index_code, asset='I')
+    # report_text = f"{header}{res_week}{res_day}{res_hour}"
+    report_text = f"{header}{res_week}{res_day}"
     return report_text
 
+
+if __name__ == '__main__':
+    res=stock_check('002701.SZ')
+    print(res)

@@ -5,9 +5,8 @@
 import datetime
 import time
 
-from config import MY_STOCKS, INDEX_S
 from trade import stock_check, index_check
-from util import send_res_to_email, get_complete_html
+from util import send_res_to_email, get_complete_html,get_index,get_stocks
 import logging
 from scheduler import My_scheduler
 
@@ -18,7 +17,10 @@ logging.basicConfig(filename='logs/log.txt',filemode="a+",
 def main():
     html=''
     count = 0
-    for k, stock in MY_STOCKS.items():
+    MY_STOCKS=get_stocks()
+
+    for item in MY_STOCKS:
+        k,stock=item.split(':')
         # logging.info(stock)
         count += 1
         try:
@@ -29,7 +31,9 @@ def main():
             logging.exception(exp)
         if count % 4 == 0:
             time.sleep(60)
-    for name, index in INDEX_S.items():
+    INDEX_S=get_index()
+    for ind in INDEX_S:
+        name,index=ind.split(':')
         # logging.info(index)
         count += 1
         try:
@@ -52,5 +56,5 @@ def main():
 if __name__ == '__main__':
     #main()
     scheduler=My_scheduler()
-    scheduler.add_job(main,'cron', day_of_week='0,1,2,3,5,6', hour=17, minute=29, second=0)
+    scheduler.add_job(main,'cron', day_of_week='0,1,2,3,5,6', hour=20, minute=1, second=0)
     scheduler.start()

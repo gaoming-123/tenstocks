@@ -620,3 +620,16 @@ class PE15Boll(BaseModel):
     now_pe=models.IntegerField(verbose_name='动态PE')
     week_boll_low=models.FloatField(verbose_name='周线Boll下轨')
     week_boll_up=models.FloatField(verbose_name='周线Boll下轨')
+
+
+class MonthCapitalSettlement(BaseModel):
+    # 中国证券登记结算数据源 的每月结算数据
+    trade_date = models.DateField(verbose_name='交易月份')
+    sh_money_total=models.FloatField(verbose_name='上海结算资金总额(亿)')
+    sh_money_net=models.FloatField(verbose_name='上海结算资金净额(亿)')
+    sz_money_total=models.FloatField(verbose_name='深圳结算资金总额(亿)')
+    sz_money_net=models.FloatField(verbose_name='深圳结算资金净额(亿)')
+    us_money_total=models.FloatField(verbose_name='美元结算资金总额(亿)')
+    us_money_net=models.FloatField(verbose_name='美元结算资金净额(亿)')
+    hk_money_total=models.FloatField(verbose_name='港元结算资金总额(亿)')
+    hk_money_net=models.FloatField(verbose_name='港元结算资金净额(亿)')

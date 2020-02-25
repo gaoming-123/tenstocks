@@ -5,11 +5,9 @@ import hashlib
 import json
 import re
 import time
-
 import requests
-
 from tenstocks.settings import BASE_DIR
-from .models import A_stocks, Money_out, WeekCompany, DB_N, TuShareRzRq, FinanceQuota, MarketDayQuota, TradeData, RzRq
+from .models import A_stocks,  DB_N, TuShareRzRq, FinanceQuota, MarketDayQuota, TradeData, RzRq
 import numpy
 import pandas as pd
 import tushare as ts
@@ -50,21 +48,15 @@ def get_all_stocks():
 
 
 # 添加历史数据
-def add_money_out_data():
+def add_xlsx_data(xlsx_file_name,model_class):
     """从xlsx文件 添加历史数据"""
-    money_out = pd.read_excel(f'{BASE_DIR}/stocks/行业5日资金流.xlsx', encoding='utf-8')
-    money_out = money_out.fillna(0)
-    # print(money_out)
-    for i in range(money_out.shape[0]):
-        row = money_out.iloc[i, :]
+    org_data = pd.read_excel(f'{BASE_DIR}/{xlsx_file_name}', encoding='utf-8')
+    org_data = org_data.fillna(0)
+    for i in range(org_data.shape[0]):
+        row = org_data.iloc[i, :]
         row = dict(row)
-        Money_out.objects.create(**row)
-    company = pd.read_excel(f'{BASE_DIR}/stocks/行业5日公司.xlsx', encoding='utf-8')
-    company = company.fillna('')
-    for i in range(company.shape[0]):
-        row = company.iloc[i, :]
-        row = dict(row)
-        WeekCompany.objects.create(**row)
+        model_class.objects.create(**row)
+
 
 
 # 获取五日行业资金流

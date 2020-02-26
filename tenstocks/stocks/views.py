@@ -7,7 +7,7 @@ from django.views import generic
 
 from calculator.calcu import pe_pick
 from calculator.pick import stock_pick, pick_buy, pick_buy_or_sell
-from .utils import add_money_out_data, get_all_stocks, get_five_day_data, get_rongzirongquan_from_dfcf, get_all_rzrq, \
+from .utils import add_xlsx_data, get_all_stocks, get_five_day_data, get_rongzirongquan_from_dfcf, get_all_rzrq, \
     get_week_sh_sz, get_finance_quota_from_tushare, get_stock_trade_data, get_finance_quota_stock, \
     get_market_day_quota, get_market_rzrq, check_stock_exist
 from .models import UserStocks, A_stocks, Money_out, WeekCompany, RzRq, FinanceQuota, TradeData, MarketDayQuota, \
@@ -42,10 +42,11 @@ class Add_stock(generic.View):
         pass
 
 
-class Add_first_data(generic.View):
+class Add_xlsx_data(generic.View):
     def get(self, request):
-        add_money_out_data()
-        return HttpResponse('add 五日资金流及公司 data success')
+        # 参数 表格名称 保存的表的model_class
+        add_xlsx_data('data.xlsx','model_class')
+        return HttpResponse('add xlsx data success')
 
 
 class New_stocks(generic.View):
@@ -92,6 +93,7 @@ class Five_day_data(generic.View):
 
 class Monitor(generic.View):
     def get(self, request):
+        # todo 添加跌停数
         all_data = Money_out.objects.all().order_by('c_time')
         market = MarketDayQuota.objects.all().order_by('trade_date')
         money = MonthCapitalSettlement.objects.all().order_by('trade_date')

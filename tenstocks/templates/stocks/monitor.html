@@ -18,7 +18,10 @@
     <div class="col-sm-6"><div id="main4" style="width: 900px;height:900px;"></div></div>
     <div class="col-sm-6"><div id="main5" style="width: 900px;height:900px;"></div></div>
 </div>
-
+<div class="row">
+    <div class="col-sm-6"><div id="main6" style="width: 900px;height:900px;"></div></div>
+    <div class="col-sm-6"><div id="main7" style="width: 900px;height:900px;"></div></div>
+</div>
 <div id="market" style="width: 900px;height:600px;"></div>
 {% endblock %}
 
@@ -36,7 +39,7 @@
     var valueList = data.map(function (item) {
         return item[1];
     });
-        var valueList1 = data.map(function (item) {
+    var valueList1 = data.map(function (item) {
         return item[2];
     });
 
@@ -62,7 +65,9 @@
             max: dateList.length - 1
         }],
 
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
         title: [{
             left: 'center',
             text: '5日主力资金流出比例(东方财富网行业资金流数据)\n周资金流出比例大于6-7%，趋势发生将逆转'
@@ -113,7 +118,9 @@
     var myChart3 = echarts.init(document.getElementById('main3'));
     var myChart4 = echarts.init(document.getElementById('main4'));
     var myChart5 = echarts.init(document.getElementById('main5'));
+    var myChart6 = echarts.init(document.getElementById('main6'));
     data = {{ markets | safe}};
+    data2={{ money | safe}};
     var dateList = data.map(function (item) {
         return item[0];
     });
@@ -157,7 +164,12 @@
     return item[13];
     });
 
-
+    var dateList2 =  data2.map(function (item) {
+        return item[0];
+    });
+    var us_out=data2.map(function (item) {
+    return item[1];
+    });
 
     var option1 = {
 
@@ -180,7 +192,9 @@
             min: 0,
             max: dateList.length - 1
         }],
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
 
         title: [{
             left: 'center',
@@ -244,7 +258,9 @@
             max: dateList.length - 1
         }],
 
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
         title: [{
             left: 'center',
             text: '市场PE中位数'
@@ -304,17 +320,15 @@
             seriesIndex: 1,
             dimension: 0,
             min: 0,
-            max: dateList.length - 1
+            max: dateList2.length - 1
         }],
-
-
         title: [{
             left: 'center',
             text: '市场破净数'
         }, {
             top: '55%',
             left: 'center',
-            text: '市场涨停数'
+            text: '美元结算净额'
         }],
         tooltip: {
             trigger: 'axis'
@@ -322,7 +336,7 @@
         xAxis: [{
             data: dateList
         }, {
-            data: dateList,
+            data: dateList2,
             gridIndex: 1
         }],
         yAxis: [{
@@ -343,7 +357,7 @@
         }, {
             type: 'line',
             showSymbol: false,
-            data: day_up_10,
+            data: us_out,
             xAxisIndex: 1,
             yAxisIndex: 1
         }]
@@ -369,7 +383,9 @@
             min: 0,
             max: dateList.length - 1
         }],
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
 
         title: [{
             left: 'center',
@@ -432,7 +448,9 @@
             min: 0,
             max: dateList.length - 1
         }],
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
 
         title: [{
             left: 'center',
@@ -474,11 +492,180 @@
             yAxisIndex: 1
         }]
     };
+    var option6 = {
+
+        // Make gradient line here
+        visualMap: [{
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: dateList.length,
+        //     inRange:{                               //定义 在选中范围中 的视觉元素
+        //     color: ['green'],
+        //     symbolSize: [0,dateList.length]
+        // },
+        }, {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 1,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+        }],
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
+
+        title: [{
+            left: 'center',
+            text: '上海融券余额'
+        }, {
+            top: '55%',
+            left: 'center',
+            text: '深圳融券余额'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: [{
+            data: dateList
+        }, {
+            data: dateList,
+            gridIndex: 1
+        }],
+        yAxis: [{
+            splitLine: {show: true}
+        }, {
+            splitLine: {show: true},
+            gridIndex: 1
+        }],
+        grid: [{
+            bottom: '55%'
+        }, {
+            top: '55%'
+        }],
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            data: sh_rqye,
+        }, {
+            type: 'line',
+            showSymbol: false,
+            data: sz_rqye,
+            xAxisIndex: 1,
+            yAxisIndex: 1
+        }]
+    };
+
+
+    var option7 = {
+        title: {
+            text: '涨跌数量统计',
+            subtext: '市场氛围',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                animation: false
+            }
+        },
+        legend: {
+            data: ['涨停数', '跌停数'],
+            left: 10
+        },
+        // toolbox: {
+        //     feature: {
+        //         dataZoom: {
+        //             yAxisIndex: 'none'
+        //         },
+        //         restore: {},
+        //         saveAsImage: {}
+        //     }
+        // },
+        axisPointer: {
+            link: {xAxisIndex: 'all'}
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 0,
+                end: dateList2.length-1,
+                xAxisIndex: [0, 1]
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 0,
+                end: dateList2.length-1,
+                xAxisIndex: [0, 1]
+            }
+        ],
+        grid: [{
+            left: 50,
+            right: 50,
+            height: '35%'
+        }, {
+            left: 50,
+            right: 50,
+            top: '55%',
+            height: '35%'
+        }],
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: {onZero: true},
+                data:dateList,
+            },
+            {
+                gridIndex: 1,
+                type: 'category',
+                boundaryGap: false,
+                axisLine: {onZero: true},
+                data: dateList,
+                position: 'top'
+            }
+        ],
+        yAxis: [
+            {
+                name: '涨停数',
+                type: 'value',
+            },
+            {
+                gridIndex: 1,
+                name: '跌停数',
+                type: 'value',
+                inverse: true
+            }
+        ],
+        series: [
+            {
+                name: '涨停数',
+                type: 'line',
+                symbolSize: 8,
+                hoverAnimation: false,
+                data: day_up_10,
+            },
+            {
+                name: '跌停数',
+                type: 'line',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                symbolSize: 8,
+                hoverAnimation: false,
+                data: day_low_10,
+            }
+        ]
+    };
     // 使用刚指定的配置项和数据显示图表。
     myChart1.setOption(option1);
     myChart2.setOption(option2);
     myChart3.setOption(option3);
     myChart4.setOption(option4);
     myChart5.setOption(option5);
+    myChart6.setOption(option7);
 </script>
 {% endblock %}

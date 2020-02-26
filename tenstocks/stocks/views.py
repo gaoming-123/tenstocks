@@ -10,7 +10,8 @@ from calculator.pick import stock_pick, pick_buy, pick_buy_or_sell
 from .utils import add_money_out_data, get_all_stocks, get_five_day_data, get_rongzirongquan_from_dfcf, get_all_rzrq, \
     get_week_sh_sz, get_finance_quota_from_tushare, get_stock_trade_data, get_finance_quota_stock, \
     get_market_day_quota, get_market_rzrq, check_stock_exist
-from .models import UserStocks, A_stocks, Money_out, WeekCompany, RzRq, FinanceQuota, TradeData, MarketDayQuota
+from .models import UserStocks, A_stocks, Money_out, WeekCompany, RzRq, FinanceQuota, TradeData, MarketDayQuota, \
+    MonthCapitalSettlement
 
 
 class Stocks(generic.View):
@@ -93,17 +94,18 @@ class Monitor(generic.View):
     def get(self, request):
         all_data = Money_out.objects.all().order_by('c_time')
         market = MarketDayQuota.objects.all().order_by('trade_date')
+        money = MonthCapitalSettlement.objects.all().order_by('trade_date')
         print(len(market))
         context = {
             'datas': [[str(data.c_time), float(data.money_out_rate), -float(data.week_sub)] for data in all_data],
 
-            'markets': [[str(m.trade_date), m.day_mid_amount, m.day_mid_pe, m.day_mid_pe_ttm,
-                         m.day_mid_pb, m.day_low_10, m.day_up_10, m.turnover_rate_f,
-                         m.turnover_rate, m.pb_lt_1, m.sh_rzrqye, m.sz_rzrqye, m.sh_rqye, m.sz_rqye] for m in market if
+            'markets': [[str(m.trade_date), round(m.day_mid_amount,4), m.day_mid_pe, m.day_mid_pe_ttm,
+                         round(m.day_mid_pb,4), m.day_low_10, m.day_up_10, round(m.turnover_rate_f,4),
+                         round(m.turnover_rate,4), m.pb_lt_1, m.sh_rzrqye, m.sz_rzrqye, m.sh_rqye, m.sz_rqye] for m in market if
                         m.sh_rzrqye],
+            'money':[[str(mo.trade_date),float(mo.us_money_net)] for mo in money],
         }
 
-        # print(context['datas'])
         return render(request, 'stocks/monitor.html', context=context)
 
 
